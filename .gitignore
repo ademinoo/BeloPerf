@@ -1,4 +1,3 @@
-# Dépendances et fichiers locaux ; à compléter avec le socle Symfony choisi.
 /vendor/
 /node_modules/
 /var/

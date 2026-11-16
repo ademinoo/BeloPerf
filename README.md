@@ -1,52 +1,19 @@
-# BeloPerf — TP Symfony, partie 1
+﻿# BeloPerf
 
-Projet de catalogue de cafés réalisé à trois : Adem, Enzo et Axel.
+TP Symfony : création d'un catalogue de cafés avec Twig.
 
-## Objectif
+Équipe : Adem, Enzo et Axel.
 
-Construire un site Symfony avec Twig, des assets partagés et trois pages reliées par des routes : accueil, produits et contact. La partie 1 porte sur la structure et l'intégration des pages. L'achat en ligne est explicitement exclu par le sujet.
+Pages prévues : accueil, produits avec filtres et contact. Pas d'achat en ligne.
 
-**État actuel :** dépôt de préparation et documentation. L'application Symfony n'est pas encore initialisée et aucune fonctionnalité n'est implémentée.
+Le projet Symfony reste à initialiser.
 
-## Documents
+## Répartition
 
-- [Analyse du sujet](docs/ANALYSE.md) : exigences, limites et modèle de données.
-- [Plan étape par étape](docs/PLAN.md) : tâches, dépendances et critères de validation.
-- [Travail en équipe](CONTRIBUTING.md) : répartition proposée et méthode Git.
-
-## Pages prévues
-
-| Page | URL proposée | Route proposée | Contenu |
+| | Adem | Enzo | Axel |
 | --- | --- | --- | --- |
-| Accueil | `/` | `app_home` | Slider, présentation, cafés tendance, témoignages |
-| Produits | `/produits` | `app_products` | Catalogue et formulaire de filtres marque, catégorie, prix |
-| Contact | `/contact` | `app_contact` | Nom, prénom, email, téléphone, message |
+| Contrôleurs et routes | Accueil | Produits | Contact |
+| Twig et HTML | Produits | Contact | Accueil |
+| CSS et mobile | Contact | Accueil | Produits |
 
-Navigation et footer avec coordonnées partagés entre les pages.
-
-## Commencer
-
-1. Cloner le dépôt : `git clone https://github.com/ademinoo/BeloPerf.git`.
-2. Lire le plan et se répartir les tâches.
-3. Réaliser ensemble le socle Symfony avant de démarrer les trois pages en parallèle.
-
-Les commandes d'installation et de lancement seront ajoutées après le choix et l'initialisation de la version Symfony. Ne pas installer trois projets Symfony indépendants.
-
-## Répartition avec rotation
-
-Chaque membre intervient sur les trois pages et pratique PHP/Symfony, Twig, CSS, Git et les vérifications. Les responsabilités tournent selon l'aspect travaillé :
-
-| Aspect | Accueil | Catalogue | Contact |
-| --- | --- | --- | --- |
-| Contrôleur, route et données PHP | Adem | Enzo | Axel |
-| Template Twig et HTML | Axel | Adem | Enzo |
-| Styles et affichage mobile | Enzo | Axel | Adem |
-| Vérification finale de la page | Adem | Enzo | Axel |
-
-Le détail du socle partagé, des passages de relais et des relectures figure dans le plan. Aucun membre n'est propriétaire exclusif d'une page.
-
-## Source
-
-Sujet fourni : « Coffeeshop - Partie 1 », BTS 2 — PHP Symfony — CoffeeShop, deux pages.
-
-Thème de référence : https://coffee-seven-ivory.vercel.app/ ; le sujet demande de le personnaliser et de supprimer les blocs inutiles. Le PDF reste hors du dépôt.
+On prépare le socle ensemble, puis on avance sur les contrôleurs, les templates et les styles. Chacun relit le travail d'un autre avant de fusionner.
