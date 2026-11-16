@@ -1,0 +1,17 @@
+# Dépendances et fichiers locaux ; à compléter avec le socle Symfony choisi.
+/vendor/
+/node_modules/
+/var/
+/public/bundles/
+/public/assets/
+/public/build/
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/*/*.decrypt.private.php
+/.phpunit.cache/
+/.phpunit.result.cache
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
