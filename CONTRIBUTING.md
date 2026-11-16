@@ -1,14 +1,26 @@
-# Travailler à trois
+# Travailler à trois sur BeloPerf
 
-## Répartition proposée
+## Rotation des responsabilités
 
-| Membre | Responsabilité principale | Relecture proposée |
-| --- | --- | --- |
-| Adem | Socle Symfony, layout partagé, accueil et intégration | Contact |
-| Enzo | Catalogue, filtres visuels et carte produit | Accueil |
-| Axel | Contact, vérification mobile et installation depuis un clone propre | Catalogue |
+| Membre | PHP/Symfony | Twig/HTML | CSS et mobile |
+| --- | --- | --- | --- |
+| Adem | Accueil | Catalogue et carte produit | Contact |
+| Enzo | Catalogue | Contact | Accueil et comportement du slider |
+| Axel | Contact | Accueil | Catalogue |
 
-Cette répartition est à valider entre vous. Elle ne correspond pas à des assignations GitHub : les comptes d'Enzo et Axel ne sont pas encore connus.
+Chacun intervient sur les trois pages et sur chaque aspect principal. Le socle est également partagé : Adem initialise Symfony, Enzo prépare le layout Twig et Axel branche les assets. Réaliser cette préparation ensemble, en changeant de personne au clavier à chaque tâche, puis vérifier chacun le lancement local.
+
+Ces responsabilités organisent le travail ; elles ne correspondent pas à des assignations GitHub, les comptes d'Enzo et Axel n'étant pas encore connus.
+
+## Passages de relais
+
+1. Convenir ensemble des variables transmises aux vues et des composants communs.
+2. Première vague : chacun réalise son contrôleur, sa route et ses données PHP.
+3. Deuxième vague : chacun réalise le Twig d'une autre page avec les variables convenues.
+4. Troisième vague : chacun réalise les styles et l'affichage mobile de la troisième page.
+5. À chaque passage, expliquer son code au suivant et fusionner la tâche avant la suivante sur les mêmes fichiers.
+
+Chacun crée ses branches, ses commits et ses pull requests. Pour les relectures : Enzo relit Adem, Axel relit Enzo, Adem relit Axel. Le responsable PHP de chaque page réalise ensuite sa vérification finale avec un collègue. À la démonstration, chacun présente un contrôleur, un template et une adaptation mobile auxquels il a contribué.
 
 ## Méthode Git
 
@@ -19,7 +31,7 @@ Cette répartition est à valider entre vous. Elle ne correspond pas à des assi
 5. Ouvrir une pull request vers `main` et demander une relecture à un collègue.
 6. Vérifier le résultat puis fusionner. Les relectures sont une convention d'équipe, pas une règle de protection déjà configurée.
 
-Branches suggérées : `chore/symfony-init`, `feat/layout`, `feat/accueil`, `feat/catalogue`, `feat/contact`.
+Branches suggérées : `chore/symfony-init`, `feat/layout`, `feat/accueil-php`, `feat/catalogue-twig`, `style/contact`. Préférer une pull request par tâche et par aspect plutôt qu'une seule pull request regroupant une page entière.
 
 ## Éviter les conflits
 

@@ -1,4 +1,4 @@
-# CoffeeShop — TP Symfony, partie 1
+# BeloPerf — TP Symfony, partie 1
 
 Projet de catalogue de cafés réalisé à trois : Adem, Enzo et Axel.
 
@@ -26,11 +26,24 @@ Navigation et footer avec coordonnées partagés entre les pages.
 
 ## Commencer
 
-1. Cloner le dépôt : `git clone https://github.com/ademinoo/coffeeshop.git`.
+1. Cloner le dépôt : `git clone https://github.com/ademinoo/BeloPerf.git`.
 2. Lire le plan et se répartir les tâches.
 3. Réaliser ensemble le socle Symfony avant de démarrer les trois pages en parallèle.
 
 Les commandes d'installation et de lancement seront ajoutées après le choix et l'initialisation de la version Symfony. Ne pas installer trois projets Symfony indépendants.
+
+## Répartition avec rotation
+
+Chaque membre intervient sur les trois pages et pratique PHP/Symfony, Twig, CSS, Git et les vérifications. Les responsabilités tournent selon l'aspect travaillé :
+
+| Aspect | Accueil | Catalogue | Contact |
+| --- | --- | --- | --- |
+| Contrôleur, route et données PHP | Adem | Enzo | Axel |
+| Template Twig et HTML | Axel | Adem | Enzo |
+| Styles et affichage mobile | Enzo | Axel | Adem |
+| Vérification finale de la page | Adem | Enzo | Axel |
+
+Le détail du socle partagé, des passages de relais et des relectures figure dans le plan. Aucun membre n'est propriétaire exclusif d'une page.
 
 ## Source
 
