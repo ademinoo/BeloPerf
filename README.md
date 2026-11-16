@@ -21,9 +21,6 @@ Chacun travaille sur les trois pages, en changeant de responsabilité à chaque 
 
 ## 1. Préparer le projet ensemble
 
-- [ ] Ajouter Enzo et Axel au dépôt et accepter les invitations.
-- [ ] Chacun clone le dépôt et vérifie son accès.
-- [ ] Vérifier la version de Symfony demandée en cours et les prérequis sur chaque ordinateur.
 - [ ] Choisir les couleurs, les polices, les images et les textes de BeloPerf, en gardant le thème du café.
 - [ ] Regarder le thème de référence et retenir les blocs utiles aux trois pages.
 
