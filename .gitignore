@@ -18,3 +18,13 @@
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
+
+# Project and local development files
+/node_modules/
+/public/build/
+/config/secrets/*/*.decrypt.private.php
+/.phpunit.result.cache
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
