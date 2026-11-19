@@ -1,3 +1,267 @@
+/*
+ * Belo Perf - valeurs communes issues de la maquette.
+ * Utilisation : color: var(--color-primary);
+ * Les tailles en rem suivent la taille de texte du navigateur.
+ * Les tailles en clamp() s'adaptent entre mobile et grand écran.
+ */
+:root {
+    color-scheme: dark;
+
+    /* Couleurs de fond et surfaces */
+    --color-background: #090a0c;
+    --color-surface: #111317;
+    --color-surface-raised: #15171b;
+    --color-surface-hover: #1b1d22;
+    --color-surface-input: #17191e;
+    --color-surface-footer: #101216;
+    --color-overlay: rgb(9 10 12 / 80%);
+    --color-header: rgb(9 10 12 / 96%);
+
+    /* Identité et textes */
+    --color-primary: #ec2439;
+    --color-primary-light: #ff4152;
+    --color-primary-dark: #bb192c;
+    --color-primary-soft: rgb(236 36 57 / 12%);
+    --color-heading: #f5f6f7;
+    --color-text: #d4d6da;
+    --color-text-muted: #a3a7ae;
+    --color-text-subtle: #858990;
+    --color-white: #fff;
+    --color-border: #292b30;
+    --color-border-hover: #6f7178;
+    --color-border-input: #34363c;
+    --color-selection: rgb(236 36 57 / 35%);
+
+    /* Retours des formulaires */
+    --color-success: #53d390;
+    --color-success-soft: rgb(83 211 144 / 12%);
+    --color-warning: #d7ba89;
+    --color-warning-soft: rgb(215 186 137 / 12%);
+    --color-error: #ff7a88;
+    --color-error-soft: rgb(255 122 136 / 12%);
+    --color-info: #8abfff;
+    --color-info-soft: rgb(138 191 255 / 12%);
+
+    /* Polices : Inter Display sera utilisée seulement si elle est chargée. */
+    --font-body: "Inter Display", "Helvetica Neue", Arial, sans-serif;
+    --font-heading: Impact, "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-heavy: 800;
+    --font-weight-black: 900;
+
+    /* Échelle de texte : réserver xs aux informations secondaires. */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-h1: clamp(2.75rem, 1.75rem + 4vw, 5.6875rem);
+    --font-size-h2: clamp(1.9375rem, 1.6rem + 1vw, 2.3125rem);
+    --font-size-h3: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+    --font-size-h4: 1.25rem;
+    --font-size-h5: 1.125rem;
+    --font-size-h6: 1rem;
+    --font-size-page-title: clamp(2.5rem, 2rem + 2vw, 3.625rem);
+    --font-size-price: 1.6875rem;
+
+    /* Hauteurs de ligne et espacement des lettres */
+    --line-height-heading: 1;
+    --line-height-tight: 1.2;
+    --line-height-body: 1.6;
+    --line-height-relaxed: 1.85;
+    --letter-spacing-heading: -0.015em;
+    --letter-spacing-label: 0.14em;
+    --letter-spacing-eyebrow: 0.22em;
+
+    /* Espacements communs */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-7: 1.75rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+
+    /* Largeurs et mise en page */
+    --container-max: 83.75rem;
+    --container-padding: clamp(1rem, 3vw, 1.75rem);
+    --content-max: 45rem;
+    --form-max: 40rem;
+    --section-padding: clamp(2rem, 1.5rem + 2vw, 3.75rem);
+    --grid-gap: 1rem;
+    --header-height: 4.6875rem;
+    --hero-min-height: 30.625rem;
+    --filter-width: 14.875rem;
+
+    /* Bordures et arrondis */
+    --border-width: 1px;
+    --border-default: var(--border-width) solid var(--color-border);
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 0.9375rem;
+    --radius-2xl: 1.25rem;
+    --radius-pill: 9999px;
+    --radius-round: 50%;
+
+    /* Ombres et focus clavier */
+    --shadow-sm: 0 0.25rem 0.75rem rgb(0 0 0 / 18%);
+    --shadow-card: 0 0.75rem 2rem rgb(0 0 0 / 25%);
+    --shadow-primary: 0 0.375rem 1.5rem rgb(236 36 57 / 20%);
+    --shadow-overlay: 0 1.5rem 4rem rgb(0 0 0 / 50%);
+    --focus-outline: 2px solid var(--color-primary-light);
+    --focus-offset: 3px;
+
+    /* Boutons : tailles et structure */
+    --button-font-size: var(--font-size-sm);
+    --button-font-weight: var(--font-weight-heavy);
+    --button-min-height: 2.75rem;
+    --button-padding-y: 0.875rem;
+    --button-padding-x: 1.1875rem;
+    --button-gap: 0.625rem;
+    --button-radius: 0.625rem;
+    --button-icon-size: 1.0625rem;
+    --button-sm-font-size: var(--font-size-sm);
+    --button-sm-min-height: 2.5rem;
+    --button-sm-padding-y: 0.6875rem;
+    --button-sm-padding-x: 0.875rem;
+    --button-sm-radius: var(--radius-md);
+    --button-lg-min-height: 3.25rem;
+    --button-lg-font-size: var(--font-size-base);
+    --button-lg-padding-y: 1rem;
+    --button-lg-padding-x: 1.5rem;
+
+    /* Boutons : variantes et états. Rouge foncé pour du texte blanc lisible. */
+    --button-primary-bg: #d91f34;
+    --button-primary-hover-bg: var(--color-primary-dark);
+    --button-primary-text: var(--color-white);
+    --button-primary-border: var(--button-primary-bg);
+    --button-secondary-bg: #22252a;
+    --button-secondary-hover-bg: #2c3035;
+    --button-secondary-text: var(--color-heading);
+    --button-secondary-border: #393c42;
+    --button-outline-bg: transparent;
+    --button-outline-hover-bg: #222429;
+    --button-outline-text: var(--color-heading);
+    --button-outline-border: var(--color-border-hover);
+    --button-disabled-bg: var(--color-surface-hover);
+    --button-disabled-text: var(--color-text-subtle);
+    --button-disabled-border: var(--color-border);
+
+    /* Champs, filtres et formulaire de contact */
+    --input-min-height: 2.9375rem;
+    --input-padding-x: 0.9375rem;
+    --input-padding-y: 0.75rem;
+    --input-radius: 0.5625rem;
+    --input-font-size: var(--font-size-base);
+    --input-bg: var(--color-surface-input);
+    --input-text: var(--color-heading);
+    --input-placeholder: var(--color-text-muted);
+    --input-border: var(--color-border-input);
+    --input-focus-border: var(--color-primary-light);
+    --input-error-border: var(--color-error);
+    --label-font-size: var(--font-size-sm);
+    --label-font-weight: var(--font-weight-bold);
+    --textarea-min-height: 10rem;
+    --checkbox-size: 1.125rem;
+
+    /* Cartes, badges et icônes */
+    --card-bg: var(--color-surface-raised);
+    --card-radius: 0.8125rem;
+    --card-padding: var(--space-4);
+    --card-border: var(--color-border);
+    --card-hover-border: #7f303b;
+    --badge-bg: var(--color-primary-soft);
+    --badge-text: var(--color-primary-light);
+    --badge-font-size: var(--font-size-xs);
+    --badge-radius: var(--radius-pill);
+    --icon-size: 1.25rem;
+    --icon-size-lg: 1.75rem;
+
+    /* Dégradés de la maquette, sans dépendance à une image */
+    --gradient-card: linear-gradient(140deg, #191b20, #111317);
+    --gradient-stage: linear-gradient(130deg, #17191f, #101115);
+    --gradient-stage-featured: linear-gradient(130deg, #33171e, #151115);
+    --gradient-banner: linear-gradient(150deg, #191b20, #0e1013);
+    --gradient-hero-overlay: linear-gradient(90deg, #0b0c0f 0%, rgb(11 12 15 / 97%) 26%, rgb(11 12 15 / 60%) 49%, rgb(11 12 15 / 3%) 100%);
+    --gradient-image-overlay: linear-gradient(0deg, rgb(9 10 12 / 91%) 4%, transparent 75%);
+    --gradient-red-glow: radial-gradient(ellipse at 85% 50%, rgb(165 29 48 / 25%), transparent 60%);
+
+    /* Motifs optionnels : background-image + background-size */
+    --pattern-line-color: rgb(255 255 255 / 4%);
+    --pattern-grid: linear-gradient(var(--pattern-line-color) 1px, transparent 1px), linear-gradient(90deg, var(--pattern-line-color) 1px, transparent 1px);
+    --pattern-grid-size: 2rem 2rem;
+    --pattern-diagonal: repeating-linear-gradient(135deg, transparent 0 0.5rem, var(--pattern-line-color) 0.5rem 0.5625rem);
+    --pattern-carbon: repeating-conic-gradient(#15171b 0% 25%, #111317 0% 50%);
+    --pattern-carbon-size: 0.5rem 0.5rem;
+
+    /* Animations : combiner une durée et une courbe dans transition. */
+    --duration-fast: 150ms;
+    --duration-normal: 200ms;
+    --duration-slow: 300ms;
+    --ease-default: ease;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --hover-lift: -0.1875rem;
+    --hover-image-scale: 1.065;
+
+    /* Ordre de superposition */
+    --z-base: 0;
+    --z-content: 1;
+    --z-dropdown: 20;
+    --z-header: 30;
+    --z-overlay: 40;
+    --z-modal: 50;
+    --z-toast: 60;
+
+    /* Noms courts conservés pour reprendre les styles de la maquette. */
+    --bg: var(--color-background);
+    --surface: var(--color-surface);
+    --card: var(--color-surface-raised);
+    --card2: var(--color-surface-hover);
+    --stroke: var(--color-border);
+    --red: var(--color-primary);
+    --red2: var(--color-primary-light);
+    --white: var(--color-heading);
+    --muted: var(--color-text-muted);
+    --text: var(--color-text);
+    --max: var(--container-max);
+    --radius: var(--radius-xl);
+}
+
+/* Valeurs globales de départ ; les composants réutiliseront le :root. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: skyblue;
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-body);
+}
+
+/* Les futurs composants utilisant ces durées respecteront ce réglage. */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --duration-fast: 0ms;
+        --duration-normal: 0ms;
+        --duration-slow: 0ms;
+        --hover-lift: 0rem;
+        --hover-image-scale: 1;
+    }
 }
