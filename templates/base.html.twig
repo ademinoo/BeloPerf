@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Belo Perf{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         {% block stylesheets %}
         {% endblock %}
@@ -13,14 +14,79 @@
 
         {% set frankenphp_hot_reload = app.request.server.get('FRANKENPHP_HOT_RELOAD') %}
         {% if frankenphp_hot_reload %}
-        <meta name="frankenphp-hot-reload:url" content="{{ frankenphp_hot_reload }}">
-        <script src="https://cdn.jsdelivr.net/npm/idiomorph"></script>
-        <script src="https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm" type="module"></script>
+            <meta name="frankenphp-hot-reload:url" content="{{ frankenphp_hot_reload }}">
+            <script src="https://cdn.jsdelivr.net/npm/idiomorph"></script>
+            <script src="https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm" type="module"></script>
         {% endif %}
     </head>
     <body>
-        <header>
-            
+        <header class="site-header">
+            <div class="header-container">
+                <a class="header-logo" href="{{ path('app_home') }}" aria-label="Belo Perf — Accueil">
+                    <span class="header-logo-slash" aria-hidden="true"></span>
+                    <span>BELO<span class="header-logo-accent">PERF.</span></span>
+                </a>
+
+                <nav class="header-nav" aria-label="Navigation principale">
+                    <a
+                        class="header-link{{ app.request.attributes.get('_route') == 'app_home' ? ' is-active' : '' }}"
+                        href="{{ path('app_home') }}"
+                        {% if app.request.attributes.get('_route') == 'app_home' %}aria-current="page"{% endif %}
+                    >Accueil</a>
+                    {# Remplacer les éléments désactivés par des liens path() quand les routes existeront. #}
+                    <span class="header-link" aria-disabled="true" title="Page bientôt disponible">Boutique</span>
+                    <span class="header-link" aria-disabled="true" title="Page bientôt disponible">À propos</span>
+                    <span class="header-link" aria-disabled="true" title="Page bientôt disponible">Contact</span>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="header-search" title="Recherche bientôt disponible">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <circle cx="10.5" cy="10.5" r="6.5"/>
+                            <path d="m16 16 4.5 4.5"/>
+                        </svg>
+                        <input
+                            type="search"
+                            placeholder="Rechercher une pièce…"
+                            aria-label="Rechercher une pièce — bientôt disponible"
+                            disabled
+                        >
+                    </div>
+                    <button
+                        class="header-cart"
+                        type="button"
+                        aria-label="Panier vide — bientôt disponible"
+                        title="Panier bientôt disponible"
+                        disabled
+                    >
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M3 3h2l2.4 12h11.2l2-8H6"/>
+                            <circle cx="9" cy="20" r="1"/>
+                            <circle cx="18" cy="20" r="1"/>
+                        </svg>
+                        <span class="header-cart-count" aria-hidden="true">0</span>
+                    </button>
+                </div>
+
+                <details class="header-mobile-menu">
+                    <summary>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <span>Menu</span>
+                    </summary>
+                    <nav class="header-mobile-nav" aria-label="Navigation mobile">
+                        <a
+                            class="header-link{{ app.request.attributes.get('_route') == 'app_home' ? ' is-active' : '' }}"
+                            href="{{ path('app_home') }}"
+                            {% if app.request.attributes.get('_route') == 'app_home' %}aria-current="page"{% endif %}
+                        >Accueil</a>
+                        <span class="header-link" aria-disabled="true">Boutique <small>Bientôt</small></span>
+                        <span class="header-link" aria-disabled="true">À propos <small>Bientôt</small></span>
+                        <span class="header-link" aria-disabled="true">Contact <small>Bientôt</small></span>
+                    </nav>
+                </details>
+            </div>
         </header>
         <main>
             {% block body %}{% endblock %}
