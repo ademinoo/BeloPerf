@@ -34,17 +34,14 @@
                         {% if app.request.attributes.get('_route') == 'app_home' %}aria-current="page"{% endif %}
                     >Accueil</a>
                     {# Remplacer les éléments désactivés par des liens path() quand les routes existeront. #}
-                    <span class="header-link" aria-disabled="true" title="Page bientôt disponible">Boutique</span>
+                    <a href="{{ path('app_shop') }}" class="header-link" aria-disabled="true" title="Boutique">Boutique</a>
                     <span class="header-link" aria-disabled="true" title="Page bientôt disponible">À propos</span>
                     <span class="header-link" aria-disabled="true" title="Page bientôt disponible">Contact</span>
                 </nav>
 
                 <div class="header-actions">
                     <div class="header-search" title="Recherche bientôt disponible">
-                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                            <circle cx="10.5" cy="10.5" r="6.5"/>
-                            <path d="m16 16 4.5 4.5"/>
-                        </svg>
+                        {{ ux_icon('tabler:search', {class: 'icon', 'aria-hidden': 'true', focusable: 'false'}) }}
                         <input
                             type="search"
                             placeholder="Rechercher une pièce…"
@@ -59,20 +56,14 @@
                         title="Panier bientôt disponible"
                         disabled
                     >
-                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                            <path d="M3 3h2l2.4 12h11.2l2-8H6"/>
-                            <circle cx="9" cy="20" r="1"/>
-                            <circle cx="18" cy="20" r="1"/>
-                        </svg>
+                        {{ ux_icon('tabler:shopping-cart', {class: 'icon', 'aria-hidden': 'true', focusable: 'false'}) }}
                         <span class="header-cart-count" aria-hidden="true">0</span>
                     </button>
                 </div>
 
                 <details class="header-mobile-menu">
                     <summary>
-                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                            <path d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
+                        {{ ux_icon('tabler:menu-2', {class: 'icon', 'aria-hidden': 'true', focusable: 'false'}) }}
                         <span>Menu</span>
                     </summary>
                     <nav class="header-mobile-nav" aria-label="Navigation mobile">
