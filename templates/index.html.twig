@@ -3,6 +3,291 @@
 {% block title %}BeloPerf — Accueil{% endblock %}
 
 {% block body %}
-    <h1>Bienvenue chez BeloPerf</h1>
-    <p>Découvre notre sélection de pièces moteurs..</p>
+    <section class="home-hero" aria-label="Belo Perf — performance automobile">
+        <div class="home-hero-content">
+
+            <h1 class="home-title">PLUS DE PUISSANCE.</h1>
+            <h1 class="home-title home-title-accent">PLUS DE sensations.</h1>
+
+            <p>Stages 1, 2 et 3, échappements, admissions et équipements de performance. Découvrez une sélection conçue pour les passionnés d'automobile.</p>
+
+            <div class="button-container">
+                <a class=" button btn-red">Explorer la boutique {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}</a>
+                <a class="button btn-white">Découvrir nos stages {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}</a>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat">
+                    <h6>01 / 02 / 03</h6>
+                    <p>NIVEAUX DE STAGE</p>
+                </div>
+                <div class="stat">
+                    <h6>100%</h6>
+                    <p>PASSION AUTO</p>
+                </div>
+                <div class="stat">
+                    <h6>FRANCE</h6>
+                    <p>BOUTIQUE FRANÇAISE</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="infos-container">
+            <div class="info">
+                <span class="info-icon" role="img" aria-label="Camion">
+                    {{ ux_icon('tabler:truck', {class: 'icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                </span>
+                <div class="info-texte">
+                    <b>Expédition en France</b>
+                    <p>Modalités selon le produit</p>
+                </div>
+            </div>
+
+            <div class="info">
+                <span class="info-icon" role="img" aria-label="Bouclier avec coche de validation">
+                    {{ ux_icon('tabler:shield-check', {class: 'icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                </span>
+                <div class="info-texte">
+                    <b>Compatibilité vérifiée</b>
+                    <p>Selon votre motorisation</p>
+                </div>
+            </div>
+
+            <div class="info">
+                <span class="info-icon" role="img" aria-label="Casque audio">
+                    {{ ux_icon('tabler:headset', {class: 'icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                </span>
+                <div class="info-texte">
+                    <b>Conseils spécialisés</b>
+                    <p>Un choix adapté à votre projet</p>
+                </div>
+            </div>
+
+            <div class="info">
+                <span class="info-icon info-stars" role="img" aria-label="Deux étoiles">
+                    {{ ux_icon('tabler:star', {class: 'icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                </span>
+                <div class="info-texte">
+                    <b>Sélection performance</b>
+                    <p>Pièces et prestations ciblées</p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="home-section home-categories">
+        <div class="section-heading">
+            <div>
+                <span>Explorez notre univers</span>
+                <h6>Toutes les catégories</h6>
+            </div>
+            <a>Voir toute la boutique {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}</a>
+        </div>
+        <div class="categorie-card">
+            <div class="card">
+                <img src="{{ asset('images/categories/stages.webp') }}" alt="Stages de performance">
+                <div>
+                    <span>STAGES 1 / 2 / 3</span>
+                    {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{{ asset('images/categories/downpipes.webp') }}" alt="Stages de performance">
+                <div>
+                    <span>DOWNPIPES</span>
+                    {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{{ asset('images/categories/filtres-a-air.webp') }}" alt="Stages de performance">
+                <div>
+                    <span>FILTRES A AIR</span>
+                    {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{{ asset('images/categories/pop-and-bang.webp') }}" alt="Stages de performance">
+                <div>
+                    <span>POP & BANG</span>
+                    {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{{ asset('images/produits/intercooler-version-originale.webp') }}" alt="Stages de performance">
+                <div>
+                    <span>INTERCOOLERS</span>
+                    {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{{ asset('images/categories/accessoires-performance.webp') }}" alt="Stages de performance">
+                <div>
+                    <span>ACCESSOIRES PERFORMANCE</span>
+                    {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-section home-products">
+        <div class="section-heading">
+            <div>
+                <span>La sélection BELOPERF</span>
+                <h6>Produits à découvrir</h6>
+            </div>
+            <a>Tous les produits {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}</a>
+        </div>
+        <div class="product-card">
+            <div class="card">
+                <div class="product-visual">
+                    <img src="{{ asset('images/categories/stages.webp') }}" alt="Stage 1">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">STAGES 1</h3>
+                    <p class="product-description">Optimisation ECU • Sans modification mécanique</p>
+                    <div class="product-footer">
+                        <span class="product-price">349 €</span>
+                        <button class="product-add" type="button" aria-label="Ajouter Stage 1 au panier" disabled>+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="product-visual">
+                    <img src="{{ asset('images/categories/downpipes.webp') }}" alt="Downpipe inox">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">DOWNPIPE INOX</h3>
+                    <p class="product-description">Échappement inox • Pour votre préparation moteur</p>
+                    <div class="product-footer">
+                        <span class="product-price">299 €</span>
+                        <button class="product-add" type="button" aria-label="Ajouter Downpipe inox au panier" disabled>+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="product-visual">
+                    <img src="{{ asset('images/categories/filtres-a-air.webp') }}" alt="Filtre à air sport">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">FILTRE A AIR SPORT</h3>
+                    <p class="product-description">Filtration sport • Pour votre admission</p>
+                    <div class="product-footer">
+                        <span class="product-price">79 €</span>
+                        <button class="product-add" type="button" aria-label="Ajouter Filtre à air sport au panier" disabled>+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="product-visual">
+                    <img src="{{ asset('images/produits/pop-and-bang-version-originale.webp') }}" alt="Cartographie Pop & Bang">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">CARTO POP & BANG</h3>
+                    <p class="product-description">Cartographie moteur • Sonorité à la décélération</p>
+                    <div class="product-footer">
+                        <span class="product-price">179 €</span>
+                        <button class="product-add" type="button" aria-label="Ajouter Cartographie Pop & Bang au panier" disabled>+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-section home-stages">
+        <div class="section-heading">
+            <div>
+                <span>Trouvez votre niveau</span>
+                <h6>Trois stages. Une passion.</h6>
+            </div>
+        </div>
+        <div class="stage-cards">
+            <article class="card stage-card">
+                <div class="stage-details">
+                    <div class="stage-heading">
+                        <p class="stage-level">NIVEAU 1</p>
+                        <h3 class="stage-title">STAGE <span>1</span></h3>
+                    </div>
+                    <p class="stage-description">L’essentiel de la performance</p>
+                    <ul class="stage-features">
+                        <li>Optimisation électronique ciblée</li>
+                        <li>Sans modification mécanique imposée</li>
+                        <li>Selon la motorisation</li>
+                    </ul>
+                    <div class="stage-footer">
+                        <div class="stage-pricing">
+                            <span class="stage-price-label">À PARTIR DE</span>
+                            <span class="stage-price">349 €</span>
+                        </div>
+                        <a class="stage-discover" aria-label="Découvrir le Stage 1" aria-disabled="true">
+                            Découvrir
+                            {{ ux_icon('tabler:arrow-right', {class: 'icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card stage-card stage-card-featured">
+                <div class="stage-details">
+                    <div class="stage-heading">
+                        <p class="stage-level">NIVEAU 2 — LE PLUS EXPLORÉ</p>
+                        <h3 class="stage-title">STAGE <span>2</span></h3>
+                    </div>
+                    <p class="stage-description">Le niveau supérieur</p>
+                    <ul class="stage-features">
+                        <li>Cartographie adaptée aux équipements</li>
+                        <li>Analyse des modifications</li>
+                        <li>Compatibilité à étudier</li>
+                    </ul>
+                    <div class="stage-footer">
+                        <div class="stage-pricing">
+                            <span class="stage-price-label">À PARTIR DE</span>
+                            <span class="stage-price">549 €</span>
+                        </div>
+                        <a class="stage-discover" aria-label="Découvrir le Stage 2" aria-disabled="true">
+                            Découvrir
+                            {{ ux_icon('tabler:arrow-right', {class: 'icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card stage-card">
+                <div class="stage-details">
+                    <div class="stage-heading">
+                        <p class="stage-level">NIVEAU 3</p>
+                        <h3 class="stage-title">STAGE <span>3</span></h3>
+                    </div>
+                    <p class="stage-description">La préparation sur mesure</p>
+                    <ul class="stage-features">
+                        <li>Configuration mécanique évoluée</li>
+                        <li>Étude et calibration personnalisées</li>
+                        <li>Projet individualisé</li>
+                    </ul>
+                    <div class="stage-footer">
+                        <div class="stage-pricing">
+                            <span class="stage-price-label">À PARTIR DE</span>
+                            <span class="stage-price">1199 €</span>
+                        </div>
+                        <a class="stage-discover" aria-label="Découvrir le Stage 3" aria-disabled="true">
+                            Découvrir
+                            {{ ux_icon('tabler:arrow-right', {class: 'icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
 {% endblock %}
