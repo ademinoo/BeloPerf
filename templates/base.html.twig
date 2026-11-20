@@ -88,9 +88,9 @@
                 </details>
             </div>
         </header>
-        <main>
+        <body class="{% block body_class %}{% endblock %}">
             {% block body %}{% endblock %}
-        </main>
+        </body>
         <footer>
             <div class="footer-nav">
                 <section class="small-desc">

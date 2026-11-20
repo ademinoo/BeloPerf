@@ -13,4 +13,10 @@ class HomeController extends AbstractController
     {
         return $this->render('index.html.twig');
     }
+
+    #[Route('/boutique', name: 'app_shop')]
+    public function boutique(): Response
+    {
+        return $this->render('shop.html.twig');
+    }
 }

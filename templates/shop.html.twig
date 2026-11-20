@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BeloPerf — Boutique{% endblock %}
+
+{% block body_class %}page-shop{% endblock %}
+
+{% block body %}
+    <section class="top-page">
+        <div class="nav-fil-ariane">
+            <a href="{{ path('app_home') }}">Accueil</a>
+            <p>/</p>
+            <a href="{{ path('app_shop') }}">Boutique</a>
+        </div>
+        <h5>BELO PERF - PERFORMANCE PARTS</h5>
+        <h1>LA BOUTIQUE</h1>
+        <p>Découvrez toutes nos pièces et prestations performances. Les tarifs présentés sont indicatifs.</p>
+    </section>
+    <main>
+        <section class="filtres-container">
+            <h6>FILTRER LES PRODUITS</h6>
+            <hr>
+            <div class="categories">
+                <p class="title">CATEGORIES</p>
+                <div class="filtre">
+                    <input type="radio" name="choix" value="tout" checked>
+                    <p>Tout</p>
+                    <p>8</p>
+                </div>
+                <div class="filtre">
+                    <input type="radio" name="choix" value="stage">
+                    <p>Stages</p>
+                    <p>3</p>
+                </div>
+                <div class="filtre">
+                    <input type="radio" name="choix" value="echappement">
+                    <p>Echappement</p>
+                    <p>1</p>
+                </div>
+                <div class="filtre">
+                    <input type="radio" name="choix" value="admission">
+                    <p>Admission</p>
+                    <p>2</p>
+                </div>
+                <div class="filtre">
+                    <input type="radio" name="choix" value="cartographie">
+                    <p>Cartopgraphie</p>
+                    <p>1</p>
+                </div>
+                <div class="filtre">
+                    <input type="radio" name="choix" value="accessoire">
+                    <p>Accessoires</p>
+                    <p>1</p>
+                </div>
+            </div>
+            <hr>
+            <button id="restart-filtres">Réinitialiser les filtres</button>
+        </section>
+        <section class="produits-container">
+
+        </section>
+    </main>
+{% endblock %}
