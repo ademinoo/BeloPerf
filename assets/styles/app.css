@@ -194,15 +194,35 @@
     --gradient-stage: linear-gradient(130deg, #17191f, #101115);
     --gradient-stage-featured: linear-gradient(130deg, #33171e, #151115);
     --gradient-banner: linear-gradient(150deg, #191b20, #0e1013);
-    --gradient-hero-overlay: linear-gradient(90deg, #0b0c0f 0%, rgb(11 12 15 / 97%) 26%, rgb(11 12 15 / 60%) 49%, rgb(11 12 15 / 3%) 100%);
-    --gradient-image-overlay: linear-gradient(0deg, rgb(9 10 12 / 91%) 4%, transparent 75%);
-    --gradient-red-glow: radial-gradient(ellipse at 85% 50%, rgb(165 29 48 / 25%), transparent 60%);
+    --gradient-hero-overlay: linear-gradient(
+        90deg,
+        #0b0c0f 0%,
+        rgb(11 12 15 / 97%) 26%,
+        rgb(11 12 15 / 60%) 49%,
+        rgb(11 12 15 / 3%) 100%
+    );
+    --gradient-image-overlay: linear-gradient(
+        0deg,
+        rgb(9 10 12 / 91%) 4%,
+        transparent 75%
+    );
+    --gradient-red-glow: radial-gradient(
+        ellipse at 85% 50%,
+        rgb(165 29 48 / 25%),
+        transparent 60%
+    );
 
     /* Motifs optionnels : background-image + background-size */
     --pattern-line-color: rgb(255 255 255 / 4%);
-    --pattern-grid: linear-gradient(var(--pattern-line-color) 1px, transparent 1px), linear-gradient(90deg, var(--pattern-line-color) 1px, transparent 1px);
+    --pattern-grid:
+        linear-gradient(var(--pattern-line-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--pattern-line-color) 1px, transparent 1px);
     --pattern-grid-size: 2rem 2rem;
-    --pattern-diagonal: repeating-linear-gradient(135deg, transparent 0 0.5rem, var(--pattern-line-color) 0.5rem 0.5625rem);
+    --pattern-diagonal: repeating-linear-gradient(
+        135deg,
+        transparent 0 0.5rem,
+        var(--pattern-line-color) 0.5rem 0.5625rem
+    );
     --pattern-carbon: repeating-conic-gradient(#15171b 0% 25%, #111317 0% 50%);
     --pattern-carbon-size: 0.5rem 0.5rem;
 
@@ -245,6 +265,10 @@
 *::after {
     box-sizing: border-box;
 }
+* a {
+    font-style: none;
+    text-decoration: none;
+}
 
 body {
     margin: 0;
@@ -264,4 +288,74 @@ body {
         --hover-lift: 0rem;
         --hover-image-scale: 1;
     }
+}
+
+/* footer */
+footer {
+    background-color: var(--color-surface-footer);
+    margin-top: var(--space-16);
+    padding: var(--space-12) var(--space-16);
+    color: var(--color-text-subtle);
+}
+footer a {
+    color: var(--color-text-subtle);
+}
+footer a:hover {
+    color: var(--color-text-muted);
+}
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: var(--font-size-xs);
+    margin-bottom: var(--space-12);
+}
+.footer-nav .small-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 35%;
+}
+.footer-nav .small-desc p {
+    margin: 2px;
+}
+.footer-nav .shop-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.footer-nav .shop-nav p {
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    margin-top: 5px;
+}
+.footer-nav .info-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.footer-nav .info-nav p {
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    margin-top: 5px;
+}
+.footer-nav .contact-nav p {
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    margin-top: 5px;
+}
+.footer-credit {
+    border-top: 2px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-credit p {
+    font-size: var(--font-size-xs);
 }
