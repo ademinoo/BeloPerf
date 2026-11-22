@@ -1223,6 +1223,10 @@ footer a:hover {
     font-weight: var(--font-weight-bold);
     margin-top: 5px;
 }
+.footer-nav .contact-nav address {
+    margin: var(--space-4) 0;
+    font-style: normal;
+}
 .footer-credit {
     border-top: 2px solid var(--color-border);
     display: flex;

@@ -56,7 +56,14 @@
             <button id="restart-filtres">Réinitialiser les filtres</button>
         </section>
         <section class="produits-container">
-
+            {% for produit in produits %}
+                <article class="card">
+                    <img src="{{ asset(produit.image) }}" alt="">
+                    <h3>{{ produit.nom }}</h3>
+                    <p>{{ produit.description }}</p>
+                    <span>{{ produit.prix }} €</span>
+                </article>
+            {% endfor %}
         </section>
     </main>
 {% endblock %}

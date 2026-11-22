@@ -28,15 +28,10 @@
                 </a>
 
                 <nav class="header-nav" aria-label="Navigation principale">
-                    <a
-                        class="header-link{{ app.request.attributes.get('_route') == 'app_home' ? ' is-active' : '' }}"
-                        href="{{ path('app_home') }}"
-                        {% if app.request.attributes.get('_route') == 'app_home' %}aria-current="page"{% endif %}
-                    >Accueil</a>
-                    {# Remplacer les éléments désactivés par des liens path() quand les routes existeront. #}
-                    <a href="{{ path('app_shop') }}" class="header-link" aria-disabled="true" title="Boutique">Boutique</a>
+                    <a href="{{ path('app_home') }}" class="header-link" title="Accueil">Accueil</a>
+                    <a href="{{ path('app_shop') }}" class="header-link" title="Boutique">Boutique</a>
                     <span class="header-link" aria-disabled="true" title="Page bientôt disponible">À propos</span>
-                    <span class="header-link" aria-disabled="true" title="Page bientôt disponible">Contact</span>
+                    <a href="{{ path('app_contact') }}" class="header-link" title="Contact">Contact</a>
                 </nav>
 
                 <div class="header-actions">
@@ -67,14 +62,10 @@
                         <span>Menu</span>
                     </summary>
                     <nav class="header-mobile-nav" aria-label="Navigation mobile">
-                        <a
-                            class="header-link{{ app.request.attributes.get('_route') == 'app_home' ? ' is-active' : '' }}"
-                            href="{{ path('app_home') }}"
-                            {% if app.request.attributes.get('_route') == 'app_home' %}aria-current="page"{% endif %}
-                        >Accueil</a>
+                        <a href="{{ path('app_home') }}" class="header-link" title="Accueil">Accueil</a>
                         <span class="header-link" aria-disabled="true">Boutique <small>Bientôt</small></span>
                         <span class="header-link" aria-disabled="true">À propos <small>Bientôt</small></span>
-                        <span class="header-link" aria-disabled="true">Contact <small>Bientôt</small></span>
+                        <a href="{{ path('app_contact') }}" class="header-link" title="Contact">Contact</a>
                     </nav>
                 </details>
             </div>
@@ -104,12 +95,20 @@
                 </section>
                 <section class="contact-nav">
                     <p>ECRIVEZ-NOUS</p>
-                    <a href="#">Une question sur une pièce ou la compatibilité d'une préparation ?</a>
+                    <div>Une question sur une pièce ou la compatibilité d'une préparation ?</div>
+                    <address>
+                        BELOPERF<br>
+                        24, rue des Pistons<br>
+                        75000 Paris, France<br>
+                        <a href="tel:+33100000000">01 00 00 00 00</a><br>
+                        <a href="mailto:contact@beloperf.example">contact@beloperf.example</a>
+                    </address>
+                    <small>Coordonnées fictives — projet étudiant.</small>
                 </section>
             </div>
             <div class="footer-credit">
-                <p>@ 2026 BeloPerf -- Projet étudiant, tarifs et produits illustratifs</p>
-                <p>Design prototype . HTML / CSS / JavaScript</p>
+                <p>@ 2026 BeloPerf</p>
+                <p>La performance a petit prix</p>
             </div>
         </footer>
     </body>
