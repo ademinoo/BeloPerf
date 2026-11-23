@@ -16,8 +16,8 @@
         <p>Découvrez toutes nos pièces et prestations performances. Les tarifs présentés sont indicatifs.</p>
     </section>
     <main>
-        <section class="filtres-container">
-            <h6>FILTRER LES PRODUITS</h6>
+        <form class="filtres-container" aria-labelledby="filtres-title">
+            <h6 id="filtres-title">FILTRER LES PRODUITS</h6>
             <hr>
             <div class="categories">
                 <p class="title">CATEGORIES</p>
@@ -53,15 +53,22 @@
                 </div>
             </div>
             <hr>
-            <button id="restart-filtres">Réinitialiser les filtres</button>
-        </section>
-        <section class="produits-container">
+            <button id="restart-filtres" class="button" type="reset">Réinitialiser les filtres</button>
+        </form>
+        <section class="produits-container product-card">
             {% for produit in produits %}
                 <article class="card">
-                    <img src="{{ asset(produit.image) }}" alt="">
-                    <h3>{{ produit.nom }}</h3>
-                    <p>{{ produit.description }}</p>
-                    <span>{{ produit.prix }} €</span>
+                    <div class="product-visual">
+                        <img src="{{ asset(produit.image) }}" alt="">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">{{ produit.nom }}</h3>
+                        <p class="product-description">{{ produit.description }}</p>
+                        <div class="product-footer">
+                            <span class="product-price">{{ produit.prix }} €</span>
+                            <button class="product-add" type="button" aria-label="Ajouter {{ produit.nom }} au panier" disabled>+</button>
+                        </div>
+                    </div>
                 </article>
             {% endfor %}
         </section>
