@@ -11,7 +11,24 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
    public function index(): Response
     {
-        return $this->render('index.html.twig');
+        $produits = [
+    [
+        'nom' => 'Stage 1',
+        'prix' => 349,
+        'description' => 'Optimisation ECU • Sans modification mécanique',
+        'image' => 'images/categories/stages.webp',
+    ],
+    [
+        'nom' => 'Downpipe inox',
+        'prix' => 299,
+        'description' => 'Échappement inox • Pour votre préparation moteur',
+        'image' => 'images/categories/downpipes.webp',
+    ],
+         ];
+
+        return $this->render('index.html.twig', [
+            'produits' => $produits,
+        ]);
     }
 
     #[Route('/boutique', name: 'app_shop')]

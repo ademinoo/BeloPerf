@@ -146,34 +146,22 @@
             <a>Tous les produits {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}</a>
         </div>
         <div class="product-card">
-            <div class="card">
-                <div class="product-visual">
-                    <img src="{{ asset('images/categories/stages.webp') }}" alt="Stage 1">
+    {% for produit in produits %}
+        <div class="card">
+            <div class="product-visual">
+              <img src="{{ asset(produit.image) }}" alt="{{ produit.nom }}">
+        </div>
+            <div class="product-details">
+              <h3 class="product-title">{{ produit.nom }}</h3>
+             <p class="product-description">{{ produit.description }}</p>
+                <div class="product-footer">
+                    <span class="product-price">{{ produit.prix }} €</span>
+                     <button class="product-add" type="button"
+                        aria-label="Ajouter {{ produit.nom }} au panier" disabled>+</button>
                 </div>
-                <div class="product-details">
-                    <h3 class="product-title">STAGES 1</h3>
-                    <p class="product-description">Optimisation ECU • Sans modification mécanique</p>
-                    <div class="product-footer">
-                        <span class="product-price">349 €</span>
-                        <button class="product-add" type="button" aria-label="Ajouter Stage 1 au panier" disabled>+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="product-visual">
-                    <img src="{{ asset('images/categories/downpipes.webp') }}" alt="Downpipe inox">
-                </div>
-                <div class="product-details">
-                    <h3 class="product-title">DOWNPIPE INOX</h3>
-                    <p class="product-description">Échappement inox • Pour votre préparation moteur</p>
-                    <div class="product-footer">
-                        <span class="product-price">299 €</span>
-                        <button class="product-add" type="button" aria-label="Ajouter Downpipe inox au panier" disabled>+</button>
-                    </div>
-                </div>
-            </div>
-
+             </div>
+        </div>
+    {% endfor %}
             <div class="card">
                 <div class="product-visual">
                     <img src="{{ asset('images/categories/filtres-a-air.webp') }}" alt="Filtre à air sport">
