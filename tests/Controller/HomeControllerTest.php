@@ -6,6 +6,21 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 final class HomeControllerTest extends WebTestCase
 {
+    public function testAboutPageIsAccessibleFromTheMainNavigation(): void
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/');
+        $client->click($crawler->filter('.header-nav')->selectLink('À propos')->link());
+
+        self::assertResponseIsSuccessful();
+        self::assertSelectorTextSame('main h1', 'Notre univers');
+        self::assertSelectorTextContains('main', 'boutique fictive');
+        self::assertSelectorExists('.header-nav a[href="/a-propos"]:not(.is-active)');
+        self::assertSelectorExists('.header-mobile-nav a[href="/a-propos"]:not(.is-active)');
+        self::assertSelectorExists('footer a[href="/a-propos"]');
+        self::assertSelectorExists('main a[href="/boutique"]');
+    }
+
     public function testHomeRendersLocalUxIcons(): void
     {
         $client = static::createClient();

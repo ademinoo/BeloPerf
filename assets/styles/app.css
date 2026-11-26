@@ -1155,6 +1155,59 @@ input {
     outline-offset: var(--focus-offset);
 }
 
+/* avis client */
+
+.avis-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+}
+
+.avis-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: var(--space-6);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+}
+
+.avis-card>span {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    letter-spacing: 0.15em;
+}
+
+.avis-card blockquote {
+    margin: var(--space-4) 0;
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+.avis-card .avis-auteur {
+    margin: auto 0 var(--space-1);
+    color: var(--color-heading);
+    font-weight: var(--font-weight-bold);
+}
+
+.avis-card small {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+}
+
+@media (max-width: 55rem) {
+    .avis-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 35rem) {
+    .avis-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
 /* Mise en page commune : footer */
 footer {
     background-color: var(--color-surface-footer);
@@ -1242,6 +1295,31 @@ footer a:hover {
     font-size: var(--font-size-xs);
 }
 
+@media (max-width: 55rem) {
+    footer {
+        margin-top: var(--space-8);
+        padding: var(--space-8) var(--container-padding);
+    }
+
+    .footer-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-6);
+        margin-bottom: var(--space-6);
+    }
+
+    .footer-nav .small-desc,
+    .footer-nav .contact-nav {
+        grid-column: 1 / -1;
+        width: auto;
+    }
+
+    .footer-credit {
+        flex-wrap: wrap;
+        gap: var(--space-2);
+    }
+}
+
 /* fil ariane */
 .nav-fil-ariane {
     display: flex;
@@ -1255,7 +1333,8 @@ footer a:hover {
     margin: 0;
 }
 
-.nav-fil-ariane a:last-child {
+.nav-fil-ariane a:last-child,
+.nav-fil-ariane [aria-current="page"] {
     color: var(--color-white);
     font-weight: var(--font-weight-medium);
 }
@@ -1391,6 +1470,286 @@ footer a:hover {
 
 @media (max-width: 35rem) {
     .page-shop .produits-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Pages intérieures : bandeau et panneaux */
+.page-container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+}
+
+.page-banner {
+    border-bottom: var(--border-default);
+    background: var(--gradient-banner);
+}
+
+.page-banner .page-container {
+    padding-block: clamp(var(--space-8), 4vw, var(--space-12));
+}
+
+.page-label {
+    margin: 0 0 var(--space-2);
+    color: var(--color-primary-light);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-eyebrow);
+    text-transform: uppercase;
+}
+
+.page-banner .page-label {
+    margin-top: var(--space-4);
+}
+
+.page-banner h1,
+.page-panel h2 {
+    margin: 0;
+    color: var(--color-heading);
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heavy);
+    line-height: var(--line-height-heading);
+    text-transform: uppercase;
+}
+
+.page-banner h1 {
+    font-size: clamp(2.75rem, 5vw, 4rem);
+}
+
+.page-lead {
+    margin: var(--space-4) 0 0;
+    color: var(--color-text-muted);
+}
+
+.page-panel {
+    padding: clamp(var(--space-5), 3vw, var(--space-10));
+    border: var(--border-width) solid var(--color-border-input);
+    border-radius: var(--radius-2xl);
+    background: var(--gradient-card);
+}
+
+.page-panel-accent {
+    background: var(--gradient-red-glow), var(--gradient-card);
+}
+
+/* Page À propos */
+.about-body {
+    padding-block: var(--space-10) var(--space-6);
+}
+
+.about-content {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.about-content h2 {
+    font-size: clamp(1.875rem, 3.2vw, 2.5rem);
+}
+
+.about-copy {
+    max-width: 34rem;
+    margin: var(--space-4) 0 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+}
+
+.about-content .button {
+    margin-top: var(--space-6);
+    min-height: var(--button-lg-min-height);
+}
+
+.about-watermark {
+    position: absolute;
+    z-index: -1;
+    right: -0.1em;
+    bottom: -0.24em;
+    color: rgb(255 255 255 / 3%);
+    font-family: var(--font-heading);
+    font-size: clamp(5rem, 12vw, 9rem);
+    font-weight: var(--font-weight-heavy);
+    line-height: 1;
+    text-transform: uppercase;
+    pointer-events: none;
+    user-select: none;
+}
+
+.about-details {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: var(--space-10) 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.about-details li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding-inline: var(--space-5);
+    border-inline-start: var(--border-default);
+}
+
+.about-details li:first-child {
+    border-inline-start: 0;
+}
+
+.about-details li::before {
+    flex: none;
+    width: 1.125rem;
+    height: 0.625rem;
+    border: solid var(--color-heading);
+    border-width: 0 0 2px 2px;
+    content: "";
+    transform: translateY(-0.15rem) rotate(-45deg);
+}
+
+.about-details strong,
+.about-details small {
+    display: block;
+}
+
+.about-details strong {
+    color: var(--color-heading);
+    font-size: var(--font-size-sm);
+}
+
+.about-details small {
+    color: var(--color-text-subtle);
+    font-size: var(--font-size-xs);
+}
+
+@media (max-width: 55rem) {
+    .about-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: var(--space-4);
+    }
+
+    .about-details li:nth-child(odd) {
+        border-inline-start: 0;
+    }
+}
+
+@media (max-width: 35rem) {
+    .about-details {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .about-details li {
+        border-inline-start: 0;
+    }
+}
+
+/* Page Contact */
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-6);
+    padding-block: var(--space-10) var(--space-6);
+}
+
+.contact-layout h2 {
+    font-size: var(--font-size-h2);
+}
+
+.contact-form,
+.contact-form-row {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.contact-form {
+    margin-top: var(--space-6);
+}
+
+.contact-form-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-field {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.contact-field label,
+.contact-details dt {
+    color: var(--color-heading);
+    font-size: var(--label-font-size);
+    font-weight: var(--label-font-weight);
+}
+
+.contact-field input,
+.contact-field textarea {
+    width: 100%;
+    min-height: var(--input-min-height);
+    padding: var(--input-padding-y) var(--input-padding-x);
+    border: var(--border-width) solid var(--input-border);
+    border-radius: var(--input-radius);
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    font: inherit;
+}
+
+.contact-field textarea {
+    min-height: var(--textarea-min-height);
+    resize: vertical;
+}
+
+.contact-field :is(input, textarea):focus-visible {
+    border-color: var(--input-focus-border);
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.contact-layout small {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2) var(--space-4);
+    margin-top: var(--space-2);
+}
+
+.contact-actions .button:disabled {
+    border-color: var(--button-disabled-border);
+    background-color: var(--button-disabled-bg);
+    color: var(--button-disabled-text);
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.contact-details address {
+    font-style: normal;
+}
+
+.contact-details dl {
+    display: grid;
+    gap: var(--space-4);
+    margin: var(--space-6) 0 var(--space-4);
+    padding-bottom: var(--space-4);
+    border-bottom: var(--border-default);
+}
+
+.contact-details dd {
+    margin: var(--space-1) 0 0;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 55rem) {
+    .contact-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 35rem) {
+    .contact-form-row {
         grid-template-columns: minmax(0, 1fr);
     }
 }

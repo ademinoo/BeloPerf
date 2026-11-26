@@ -146,22 +146,26 @@
             <a>Tous les produits {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}</a>
         </div>
         <div class="product-card">
-    {% for produit in produits %}
-        <div class="card">
-            <div class="product-visual">
-              <img src="{{ asset(produit.image) }}" alt="{{ produit.nom }}">
-        </div>
-            <div class="product-details">
-              <h3 class="product-title">{{ produit.nom }}</h3>
-             <p class="product-description">{{ produit.description }}</p>
-                <div class="product-footer">
-                    <span class="product-price">{{ produit.prix }} €</span>
-                     <button class="product-add" type="button"
-                        aria-label="Ajouter {{ produit.nom }} au panier" disabled>+</button>
+            {% for produit in produits %}
+                <div class="card">
+                    <div class="product-visual">
+                        <img src="{{ asset(produit.image) }}" alt="{{ produit.nom }}">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">{{ produit.nom }}</h3>
+                        <p class="product-description">{{ produit.description }}</p>
+                        <div class="product-footer">
+                            <span class="product-price">{{ produit.prix }} €</span>
+                            <button
+                                class="product-add"
+                                type="button"
+                                aria-label="Ajouter {{ produit.nom }} au panier"
+                                disabled
+                            >+</button>
+                        </div>
+                    </div>
                 </div>
-             </div>
-        </div>
-    {% endfor %}
+            {% endfor %}
             <div class="card">
                 <div class="product-visual">
                     <img src="{{ asset('images/categories/filtres-a-air.webp') }}" alt="Filtre à air sport">
@@ -274,6 +278,52 @@
                     </div>
                 </div>
             </article>
+        </div>
+    </section>
+
+    <section class="home-section avis">
+        <div class="section-heading">
+            <div>
+                <span>Ils nous ont fait confiance.</span>
+                <h6>Retour client.</h6>
+            </div>
+        </div>
+        <div class="avis-container">
+            <div class="avis-card">
+                <span role="img" aria-label="5 étoiles sur 5">★★★★★</span>
+
+                <blockquote>
+                    De bons conseils pour choisir les pièces adaptées à ma
+                    voiture. Une sélection claire et bien présentée !
+                </blockquote>
+
+                <p class="avis-auteur">Enzo B.</p>
+                <small>Avis fictif — projet étudiant</small>
+            </div>
+
+            <div class="avis-card">
+                <span role="img" aria-label="5 étoiles sur 5">★★★★★</span>
+
+                <blockquote>
+                    De bons conseils pour choisir les pièces adaptées à ma
+                    voiture. Une sélection claire et bien présentée !
+                </blockquote>
+
+                <p class="avis-auteur">Adem D.</p>
+                <small>Avis fictif — projet étudiant</small>
+            </div>
+
+            <div class="avis-card">
+                <span role="img" aria-label="5 étoiles sur 5">★★★★★</span>
+
+                <blockquote>
+                    De bons conseils pour choisir les pièces adaptées à ma
+                    voiture. Une sélection claire et bien présentée !
+                </blockquote>
+
+                <p class="avis-auteur">Axel R.</p>
+                <small>Avis fictif — projet étudiant</small>
+            </div>
         </div>
     </section>
 

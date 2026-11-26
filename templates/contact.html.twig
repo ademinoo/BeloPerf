@@ -3,4 +3,70 @@
 {% block title %}BeloPerf — Contact{% endblock %}
 
 {% block body %}
+    <main>
+        {% include '_page_banner.html.twig' with {
+            breadcrumb: 'Contact',
+            heading: 'Contact',
+            lead: 'Une question sur une pièce, une motorisation ou un stage ?'
+        } only %}
+
+        <div class="page-container contact-layout">
+            <section class="page-panel page-panel-accent" aria-labelledby="contact-form-title">
+                <h2 id="contact-form-title">Écrivez-nous</h2>
+
+                <form class="contact-form" method="post">
+                    <div class="contact-form-row">
+                        <div class="contact-field">
+                            <label for="contact-name">Nom</label>
+                            <input id="contact-name" name="nom" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="contact-field">
+                            <label for="contact-email">Adresse e-mail</label>
+                            <input id="contact-email" name="email" type="email" autocomplete="email" required>
+                        </div>
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="contact-subject">Sujet</label>
+                        <input id="contact-subject" name="sujet" type="text" required>
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="5" aria-describedby="contact-message-hint" required></textarea>
+                        <small id="contact-message-hint">Pour une question de compatibilité, indiquez le modèle, l’année et la motorisation.</small>
+                    </div>
+
+                    <div class="contact-actions">
+                        <button class="button btn-red" type="submit" disabled>
+                            Envoyer le message
+                            {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                        </button>
+                        <small>Envoi indisponible pour le moment.</small>
+                    </div>
+                </form>
+            </section>
+
+            <aside class="page-panel contact-details" aria-labelledby="contact-details-title">
+                <h2 id="contact-details-title">Coordonnées</h2>
+                <address>
+                    <dl>
+                        <div>
+                            <dt>E-mail</dt>
+                            <dd>contact@beloperf.example</dd>
+                        </div>
+                        <div>
+                            <dt>Téléphone</dt>
+                            <dd>01 00 00 00 00</dd>
+                        </div>
+                        <div>
+                            <dt>Adresse</dt>
+                            <dd>24, rue des Pistons<br>75000 Paris, France</dd>
+                        </div>
+                    </dl>
+                </address>
+                <small>Coordonnées fictives — projet étudiant.</small>
+            </aside>
+        </div>
+    </main>
 {% endblock %}

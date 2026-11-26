@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BeloPerf — À propos{% endblock %}
+
+{% block body %}
+    <main>
+        {% include '_page_banner.html.twig' with {
+            breadcrumb: 'À propos',
+            heading: 'Notre univers',
+            lead: 'Une boutique conçue autour de la passion automobile et de la performance responsable.'
+        } only %}
+
+        <div class="page-container about-body">
+            <section class="page-panel page-panel-accent about-content" aria-labelledby="about-title">
+                <p class="page-label">Performance / Précision / Passion</p>
+                <h2 id="about-title">La passion du détail.<br>La culture de la performance.</h2>
+                <p class="about-copy">BeloPerf est un concept de boutique fictive imaginé dans le cadre d’un projet étudiant. Le catalogue réunit des stages moteur, des pièces d’admission et des échappements, avec des prix indicatifs.</p>
+                <a class="button btn-red" href="{{ path('app_shop') }}">
+                    Explorer la boutique
+                    {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                </a>
+                <span class="about-watermark" aria-hidden="true">Performance</span>
+            </section>
+
+            <ul class="about-details">
+                <li>
+                    <div>
+                        <strong>Catalogue clair</strong>
+                        <small>Pièces classées par catégorie</small>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Stages moteur</strong>
+                        <small>Stages 1, 2 et 3</small>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Équipements</strong>
+                        <small>Admission et échappement</small>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Projet étudiant</strong>
+                        <small>Boutique de démonstration</small>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+{% endblock %}
