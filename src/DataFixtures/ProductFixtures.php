@@ -16,6 +16,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
         $products = [
             [
                 'name' => 'Filtre à air sport',
+                'image' => 'images/produits/filtre-a-air-sport.webp',
                 'description' => 'Filtre pour le circuit d’admission, à choisir selon la motorisation.',
                 'price' => 7900,
                 'note' => 16,
@@ -27,6 +28,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             ],
             [
                 'name' => 'Stage 1',
+                'image' => 'images/produits/stage-1-reprogrammation-ecu.webp',
                 'description' => 'Optimisation du calculateur adaptée à la motorisation du véhicule.',
                 'price' => 34900,
                 'note' => 18,
@@ -38,6 +40,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             ],
             [
                 'name' => 'Stage 2',
+                'image' => 'images/produits/stage-2-cartographie.webp',
                 'description' => 'Cartographie adaptée aux modifications mécaniques du véhicule.',
                 'price' => 54900,
                 'note' => 18,
@@ -49,6 +52,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             ],
             [
                 'name' => 'Stage 3',
+                'image' => 'images/produits/stage-3-preparation.webp',
                 'description' => 'Préparation moteur et réglages personnalisés selon le projet.',
                 'price' => 119900,
                 'note' => 19,
@@ -60,6 +64,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             ],
             [
                 'name' => 'Cartographie Pop & Bang',
+                'image' => 'images/produits/pop-and-bang.webp',
                 'description' => 'Cartographie moteur qui modifie la sonorité à la décélération.',
                 'price' => 17900,
                 'note' => 19,
@@ -71,6 +76,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             ],
             [
                 'name' => 'Downpipe inox',
+                'image' => 'images/produits/downpipe-inox.webp',
                 'description' => 'Descente d’échappement en inox pour une préparation moteur.',
                 'price' => 29900,
                 'note' => 17,
@@ -82,6 +88,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             ],
             [
                 'name' => 'Turbo performance',
+                'image' => 'images/produits/turbo-performance.webp',
                 'description' => 'Turbocompresseur pour un projet de préparation moteur.',
                 'price' => 89900,
                 'note' => 18,
@@ -93,6 +100,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             ],
             [
                 'name' => 'Intercooler',
+                'image' => 'images/produits/intercooler.webp',
                 'description' => 'Échangeur qui refroidit l’air comprimé avant son entrée dans le moteur.',
                 'price' => 39900,
                 'note' => 17,
@@ -104,6 +112,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             ],
             [
                 'name' => 'Kit admission carbone',
+                'image' => 'images/produits/kit-admission-carbone.webp',
                 'description' => 'Kit d’admission avec boîtier en carbone pour le compartiment moteur.',
                 'price' => 24900,
                 'note' => 18,
@@ -115,6 +124,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             ],
             [
                 'name' => 'Échappement inox double sortie',
+                'image' => 'images/produits/echappement-inox-double-sortie.webp',
                 'description' => 'Ligne d’échappement en inox équipée de deux sorties.',
                 'price' => 59900,
                 'note' => 17,
@@ -126,6 +136,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             ],
             [
                 'name' => 'Suspension sport',
+                'image' => 'images/produits/suspension-sport.webp',
                 'description' => 'Ensemble de suspension pour une préparation du châssis.',
                 'price' => 69900,
                 'note' => 18,
@@ -137,6 +148,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             ],
             [
                 'name' => 'Kit frein sport disque et étrier',
+                'image' => 'images/produits/frein-sport-disque-etrier.webp',
                 'description' => 'Ensemble de freinage sport comprenant un disque et un étrier.',
                 'price' => 44900,
                 'note' => 19,
@@ -152,6 +164,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             $product = new Product();
             $product->setName($data['name']);
             $product->setDescription($data['description']);
+            $product->setImage($data['image']);
             $product->setPrice($data['price']);
             $product->setNote($data['note']);
             $product->setFamily($data['family']);

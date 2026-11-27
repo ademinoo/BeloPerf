@@ -59,14 +59,17 @@
             {% for produit in produits %}
                 <article class="card">
                     <div class="product-visual">
-                        <img src="{{ asset(produit.image) }}" alt="">
+                        {% if produit.image %}
+                            <img src="{{ asset(produit.image) }}" alt="">
+                        {% endif %}
+
                     </div>
                     <div class="product-details">
-                        <h3 class="product-title">{{ produit.nom }}</h3>
+                        <h3 class="product-title">{{ produit.name }}</h3>
                         <p class="product-description">{{ produit.description }}</p>
                         <div class="product-footer">
-                            <span class="product-price">{{ produit.prix }} €</span>
-                            <button class="product-add" type="button" aria-label="Ajouter {{ produit.nom }} au panier" disabled>+</button>
+                            <span class="product-price">{{ produit.price / 100 }} €</span>
+                            <button class="product-add" type="button" aria-label="Ajouter {{ produit.name }} au panier" disabled>+</button>
                         </div>
                     </div>
                 </article>

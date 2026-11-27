@@ -82,58 +82,20 @@
         <div class="section-heading">
             <div>
                 <span>Explorez notre univers</span>
-                <h6>Toutes les catégories</h6>
+                <h6>Catégories à découvrir</h6>
             </div>
             <a>Voir toute la boutique {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}</a>
         </div>
         <div class="categorie-card">
-            <div class="card">
-                <img src="{{ asset('images/categories/stages.webp') }}" alt="Stages de performance">
-                <div>
-                    <span>STAGES 1 / 2 / 3</span>
-                    {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+            {% for categorie in categories %}
+                <div class="card">
+                    <img src="{{ asset(categorie.image) }}" alt="">
+                    <div>
+                        <span>{{ categorie.name }}</span>
+                        {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
+                    </div>
                 </div>
-            </div>
-
-            <div class="card">
-                <img src="{{ asset('images/categories/downpipes.webp') }}" alt="Stages de performance">
-                <div>
-                    <span>DOWNPIPES</span>
-                    {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="{{ asset('images/categories/filtres-a-air.webp') }}" alt="Stages de performance">
-                <div>
-                    <span>FILTRES A AIR</span>
-                    {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="{{ asset('images/categories/pop-and-bang.webp') }}" alt="Stages de performance">
-                <div>
-                    <span>POP & BANG</span>
-                    {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="{{ asset('images/produits/intercooler-version-originale.webp') }}" alt="Stages de performance">
-                <div>
-                    <span>INTERCOOLERS</span>
-                    {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="{{ asset('images/categories/accessoires-performance.webp') }}" alt="Stages de performance">
-                <div>
-                    <span>ACCESSOIRES PERFORMANCE</span>
-                    {{ ux_icon('tabler:arrow-right', {class: 'icon button-icon', 'aria-hidden': 'true', focusable: 'false'}) }}
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
@@ -166,33 +128,6 @@
                     </div>
                 </div>
             {% endfor %}
-            <div class="card">
-                <div class="product-visual">
-                    <img src="{{ asset('images/categories/filtres-a-air.webp') }}" alt="Filtre à air sport">
-                </div>
-                <div class="product-details">
-                    <h3 class="product-title">FILTRE A AIR SPORT</h3>
-                    <p class="product-description">Filtration sport • Pour votre admission</p>
-                    <div class="product-footer">
-                        <span class="product-price">79 €</span>
-                        <button class="product-add" type="button" aria-label="Ajouter Filtre à air sport au panier" disabled>+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="product-visual">
-                    <img src="{{ asset('images/produits/pop-and-bang-version-originale.webp') }}" alt="Cartographie Pop & Bang">
-                </div>
-                <div class="product-details">
-                    <h3 class="product-title">CARTO POP & BANG</h3>
-                    <p class="product-description">Cartographie moteur • Sonorité à la décélération</p>
-                    <div class="product-footer">
-                        <span class="product-price">179 €</span>
-                        <button class="product-add" type="button" aria-label="Ajouter Cartographie Pop & Bang au panier" disabled>+</button>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -289,41 +224,14 @@
             </div>
         </div>
         <div class="avis-container">
-            <div class="avis-card">
-                <span role="img" aria-label="5 étoiles sur 5">★★★★★</span>
-
-                <blockquote>
-                    De bons conseils pour choisir les pièces adaptées à ma
-                    voiture. Une sélection claire et bien présentée !
-                </blockquote>
-
-                <p class="avis-auteur">Enzo B.</p>
-                <small>Avis fictif — projet étudiant</small>
-            </div>
-
-            <div class="avis-card">
-                <span role="img" aria-label="5 étoiles sur 5">★★★★★</span>
-
-                <blockquote>
-                    De bons conseils pour choisir les pièces adaptées à ma
-                    voiture. Une sélection claire et bien présentée !
-                </blockquote>
-
-                <p class="avis-auteur">Adem D.</p>
-                <small>Avis fictif — projet étudiant</small>
-            </div>
-
-            <div class="avis-card">
-                <span role="img" aria-label="5 étoiles sur 5">★★★★★</span>
-
-                <blockquote>
-                    De bons conseils pour choisir les pièces adaptées à ma
-                    voiture. Une sélection claire et bien présentée !
-                </blockquote>
-
-                <p class="avis-auteur">Axel R.</p>
-                <small>Avis fictif — projet étudiant</small>
-            </div>
+            {% for retour in avis %}
+                <div class="avis-card">
+                    <span role="img" aria-label="5 étoiles sur 5">★★★★★</span>
+                    <blockquote>{{ retour.message }}</blockquote>
+                    <p class="avis-auteur">{{ retour.auteur }}</p>
+                    <small>Avis fictif — projet étudiant</small>
+                </div>
+            {% endfor %}
         </div>
     </section>
 
