@@ -1240,6 +1240,11 @@ footer a:hover {
     width: 35%;
 }
 
+.footer-nav .footer-logo {
+    margin-bottom: var(--space-4);
+    color: var(--color-heading);
+}
+
 .footer-nav .small-desc p {
     margin: 2px;
 }
@@ -1340,32 +1345,7 @@ footer a:hover {
 }
 
 /* page shop */
-.page-shop .top-page {
-    background-color: var(--color-surface-raised);
-    padding: var(--space-12) var(--space-16);
-    color: var(--color-text-subtle);
-    border-bottom: 1px solid var(--color-border);
-}
-
-.page-shop h1 {
-    margin: 0;
-    font-family: var(--font-heading);
-    font-size: var(--font-size-h1);
-    color: var(--color-white);
-    line-height: 1;
-}
-
-.page-shop .top-page h5 {
-    margin: 0;
-    margin-top: var(--space-4);
-    letter-spacing: var(--space-1);
-    font-size: var(--font-size-h5);
-    color: var(--color-primary);
-    font-family: var(--font-heading);
-    font-weight: var(--font-weight-medium);
-}
-
-.page-shop main {
+.page-shop .shop-content {
     background-color: var(--color-header);
     padding: var(--space-12) clamp(var(--container-padding), 5vw, var(--space-16));
     color: var(--color-text-subtle);
@@ -1374,7 +1354,7 @@ footer a:hover {
     gap: var(--space-6);
 }
 
-.page-shop main .filtres-container {
+.page-shop .shop-content .filtres-container {
     position: sticky;
     top: 7rem;
     flex-shrink: 0;
@@ -1457,12 +1437,12 @@ footer a:hover {
 }
 
 @media (max-width: 55rem) {
-    .page-shop main {
+    .page-shop .shop-content {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .page-shop main .filtres-container {
+    .page-shop .shop-content .filtres-container {
         position: static;
         width: 100%;
     }

@@ -5,75 +5,73 @@
 {% block body_class %}page-shop{% endblock %}
 
 {% block body %}
-    <section class="top-page">
-        <div class="nav-fil-ariane">
-            <a href="{{ path('app_home') }}">Accueil</a>
-            <p>/</p>
-            <a href="{{ path('app_shop') }}">Boutique</a>
-        </div>
-        <h5>BELO PERF - PERFORMANCE PARTS</h5>
-        <h1>LA BOUTIQUE</h1>
-        <p>Découvrez toutes nos pièces et prestations performances. Les tarifs présentés sont indicatifs.</p>
-    </section>
     <main>
-        <form class="filtres-container" aria-labelledby="filtres-title">
-            <h6 id="filtres-title">FILTRER LES PRODUITS</h6>
-            <hr>
-            <div class="categories">
-                <p class="title">CATEGORIES</p>
-                <div class="filtre">
-                    <input type="radio" name="choix" value="tout" checked>
-                    <p>Tout</p>
-                    <p>8</p>
-                </div>
-                <div class="filtre">
-                    <input type="radio" name="choix" value="stage">
-                    <p>Stages</p>
-                    <p>3</p>
-                </div>
-                <div class="filtre">
-                    <input type="radio" name="choix" value="echappement">
-                    <p>Echappement</p>
-                    <p>1</p>
-                </div>
-                <div class="filtre">
-                    <input type="radio" name="choix" value="admission">
-                    <p>Admission</p>
-                    <p>2</p>
-                </div>
-                <div class="filtre">
-                    <input type="radio" name="choix" value="cartographie">
-                    <p>Cartopgraphie</p>
-                    <p>1</p>
-                </div>
-                <div class="filtre">
-                    <input type="radio" name="choix" value="accessoire">
-                    <p>Accessoires</p>
-                    <p>1</p>
-                </div>
-            </div>
-            <hr>
-            <button id="restart-filtres" class="button" type="reset">Réinitialiser les filtres</button>
-        </form>
-        <section class="produits-container product-card">
-            {% for produit in produits %}
-                <article class="card">
-                    <div class="product-visual">
-                        {% if produit.image %}
-                            <img src="{{ asset(produit.image) }}" alt="">
-                        {% endif %}
+        {% include '_page_banner.html.twig' with {
+            breadcrumb: 'Boutique',
+            heading: 'La boutique',
+            lead: 'Découvrez toutes nos pièces et prestations performances. Les tarifs présentés sont indicatifs.'
+        } only %}
 
+        <div class="shop-content">
+            <form class="filtres-container" aria-labelledby="filtres-title">
+                <h6 id="filtres-title">FILTRER LES PRODUITS</h6>
+                <hr>
+                <div class="categories">
+                    <p class="title">CATEGORIES</p>
+                    <div class="filtre">
+                        <input type="radio" name="choix" value="tout" checked>
+                        <p>Tout</p>
+                        <p>8</p>
                     </div>
-                    <div class="product-details">
-                        <h3 class="product-title">{{ produit.name }}</h3>
-                        <p class="product-description">{{ produit.description }}</p>
-                        <div class="product-footer">
-                            <span class="product-price">{{ produit.price / 100 }} €</span>
-                            <button class="product-add" type="button" aria-label="Ajouter {{ produit.name }} au panier" disabled>+</button>
+                    <div class="filtre">
+                        <input type="radio" name="choix" value="stage">
+                        <p>Stages</p>
+                        <p>3</p>
+                    </div>
+                    <div class="filtre">
+                        <input type="radio" name="choix" value="echappement">
+                        <p>Echappement</p>
+                        <p>1</p>
+                    </div>
+                    <div class="filtre">
+                        <input type="radio" name="choix" value="admission">
+                        <p>Admission</p>
+                        <p>2</p>
+                    </div>
+                    <div class="filtre">
+                        <input type="radio" name="choix" value="cartographie">
+                        <p>Cartopgraphie</p>
+                        <p>1</p>
+                    </div>
+                    <div class="filtre">
+                        <input type="radio" name="choix" value="accessoire">
+                        <p>Accessoires</p>
+                        <p>1</p>
+                    </div>
+                </div>
+                <hr>
+                <button id="restart-filtres" class="button" type="reset">Réinitialiser les filtres</button>
+            </form>
+            <section class="produits-container product-card">
+                {% for produit in produits %}
+                    <article class="card">
+                        <div class="product-visual">
+                            {% if produit.image %}
+                                <img src="{{ asset(produit.image) }}" alt="">
+                            {% endif %}
+
                         </div>
-                    </div>
-                </article>
-            {% endfor %}
-        </section>
+                        <div class="product-details">
+                            <h3 class="product-title">{{ produit.name }}</h3>
+                            <p class="product-description">{{ produit.description }}</p>
+                            <div class="product-footer">
+                                <span class="product-price">{{ produit.price / 100 }} €</span>
+                                <button class="product-add" type="button" aria-label="Ajouter {{ produit.name }} au panier" disabled>+</button>
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+            </section>
+        </div>
     </main>
 {% endblock %}
